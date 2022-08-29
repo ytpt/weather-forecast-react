@@ -1,0 +1,26 @@
+.favCity {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.favCity p {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.favCity img {
+    transform: rotate(45deg);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.favCityList {
+    padding: 0 0 5px 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
