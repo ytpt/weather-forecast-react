@@ -5,8 +5,9 @@ import s from './MainScreen.module.css';
 import FavoriteList from "./FavoriteList/FavoriteList";
 import {useDispatch} from "react-redux";
 import {addToFavoriteAC} from "../../redux/reducers/favCities";
+import Buttons from "./Buttons/Buttons";
 
-const MainScreen = ({favCities}) => {
+const MainScreen = ({favCities, data}) => {
 
     let favCityList = [];
     favCities.forEach(city => {
@@ -33,12 +34,7 @@ const MainScreen = ({favCities}) => {
                         </button>
                     </div>
                 </div>
-                <div className={s.buttons}>
-                    <button className={s.active}>Now</button>
-                    <button>Details</button>
-                    <button>Forecast</button>
-                </div>
-
+                <Buttons />
             </div>
             <div className={s.favList}>
                 <h3>Added locations:</h3>
