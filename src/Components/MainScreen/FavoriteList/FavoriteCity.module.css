@@ -11,10 +11,13 @@
     margin-bottom: 5px;
 }
 
-.favCity img {
-    transform: rotate(45deg);
-    margin-right: 10px;
+.favCity_icon  {
+    margin-right: 15px;
     cursor: pointer;
+}
+
+.favCity_icon:hover {
+    color: red;
 }
 
 .favCityList {

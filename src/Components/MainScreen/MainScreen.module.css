@@ -62,6 +62,13 @@
     border: none;
     background: transparent;
 }
+.add_favorite_icon {
+    font-size: 30px;
+}
+
+.add_favorite_icon:hover {
+    color: red;
+}
 
 .buttons > .active {
     background: #000;

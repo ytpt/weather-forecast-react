@@ -1,65 +1,48 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from './App.module.css';
 import MainScreen from "./Components/MainScreen/MainScreen";
 import {useSelector} from "react-redux";
-import search from "./img/lupa.png";
-
-const api ={
-    url: 'http://api.openweathermap.org/data/2.5/weather',
-    key: 'f660a2fb1e4bad108d6160b7f58c555f'
-}
+import {GoSearch} from 'react-icons/go';
+import {getForecast} from "./api";
 
 const App = () => {
-
-    let [responseObj, setResponseObj] = useState({});
+    let [weather, setWeather] = useState(null);
     let [city, setCity] = useState('');
-    let [error, setError] = useState(false);
 
-    const getForecast = (e) => {
-        e.preventDefault();
+    useEffect(() => {
+        document.querySelector('#cityForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            city = document.querySelector('#cityName').value;
 
-        if (city.length === 0) {
-            return setError(true);
-        }
+            const fetchWeatherData = async () => {
+                setWeather(await getForecast(city));
+            }
 
-        setError(false);
-        setResponseObj({});
+            { city !== '' && fetchWeatherData() }
 
-        const uriEncodedCity = encodeURIComponent(city);
-        const apiUrl = `${api.url}?q=${uriEncodedCity}&appid=${api.key}&units=metric`;
+            setCity('');
+        });
+    }, []);
 
-        fetch(apiUrl)
-            .then(res => res.json())
-            .then(res => {
-                if (res.cod !== 200) {
-                    throw new Error()
-                }
-                setResponseObj(res);
-                setCity('');
-                console.log(res);
-            })
-            .catch(err => {
-                setError(true);
-                console.log(err.message);
-            });
-    }
-
-    const favCities = useSelector((store) => store.favCities.favCities)
+    const favCities = useSelector((store) => store.favCities.favCities);
 
     return (
         <div className={s.container}>
             <div className={s.input_block}>
-                <form onSubmit={getForecast}>
-                    <input type='text' id={'cityName'} value={city}
-                           placeholder={'Enter city'} maxLength="50"
-                           onChange={(e) => setCity(e.target.value)}
+                <form id={'cityForm'}>
+                    <input type='text'
+                           id={'cityName'}
+                           maxLength='50'
+                           placeholder={'Enter city'}
+                           value={city}
+                           onChange={e => setCity(e.target.value)}
                            required />
-                    <button type={'submit'} id={'searchBtn'}>
-                        <img alt={search} src={search} width={30} height={20} />
+                    <button type='submit' id={'searchBtn'}>
+                        <GoSearch className={s.input_block_search_icon} />
                     </button>
                 </form>
             </div>
-            <MainScreen favCities={favCities} responseObj={responseObj} />
+            { weather && (<MainScreen favCities={favCities} weather={weather} />) }
         </div>
     );
 }

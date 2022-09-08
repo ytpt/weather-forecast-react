@@ -1,14 +1,13 @@
 import React from "react";
-import cross from "../../../img/close-icon.png";
+import {ImCross} from 'react-icons/im';
 import s from './FavoriteCity.module.css';
-import {deleteFromFavorite} from "../../../redux/reducers/favCities";
+import {deleteFromFavorite} from "../../../redux/reducers/favorite-reducer";
 
 const City = ({city}) => {
     return (
         <li className={s.favCity}>
             <p>{city.name}</p>
-            <img src={cross} alt={cross} width={20} height={20}
-                 onClick={deleteFromFavorite} />
+            <ImCross className={s.favCity_icon} onClick={deleteFromFavorite} />
         </li>
     )
 }

@@ -1,14 +1,12 @@
 import React from "react";
-import favorite from '../../img/Shape.png';
 import s from './MainScreen.module.css';
 import FavoriteList from "./FavoriteList/FavoriteList";
 import {useDispatch} from "react-redux";
-import {addToFavoriteAC} from "../../redux/reducers/favCities";
+import {addToFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import Buttons from "./Buttons/Buttons";
+import {AiOutlineHeart} from 'react-icons/ai';
 
-const MainScreen = ({favCities, responseObj}) => {
-    let temp = '';
-    let iconSRC = '';
+const MainScreen = ({favCities, weather}) => {
 
     let favCityList = [];
     favCities.forEach(city => {
@@ -16,27 +14,20 @@ const MainScreen = ({favCities, responseObj}) => {
     })
 
     const dispatch = useDispatch();
-    const handleClick = (e) => {
-        e.stopPropagation();
-        dispatch(addToFavoriteAC())
-    }
-
-    if (Object.keys(responseObj).length > 0) {
-        temp = `${Math.round(responseObj.main.temp)}°C`;
-        iconSRC = `http://openweathermap.org/img/w/${responseObj.weather[0].icon}.png`;
+    const addToFavList = (cityName) => {
+        dispatch(addToFavoriteAC(cityName));
     }
 
     return (
         <div className={s.main}>
             <div className={s.main_info}>
                 <div className={s.main_info_forecast}>
-                    <h2>{temp}</h2>
-                    <img alt={responseObj.main} src={iconSRC} width={100} height={100}/>
+                    <h2>{`${Math.round(weather.temp)}°C`}</h2>
+                    <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
                     <div className={s.add_favorite}>
-                        <h3>{responseObj.name}</h3>
+                        <h3>{`${weather.name}, ${weather.country}`}</h3>
                         <button>
-                            <img alt={favorite} src={favorite} width={15} height={15}
-                                 onClick={handleClick} />
+                            <AiOutlineHeart className={s.add_favorite_icon} onClick={addToFavList} />
                         </button>
                     </div>
                 </div>

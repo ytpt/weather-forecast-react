@@ -11,7 +11,7 @@ const initialState = {
     ]
 }
 
-export default (state = initialState, action) => {
+const favoriteReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_FAVORITE: {
             return {
@@ -35,10 +35,7 @@ export default (state = initialState, action) => {
     }
 }
 
-export const addToFavoriteAC = (name) => {
-    return (dispatch) => dispatch({type: ADD_TO_FAVORITE, name})
-}
+export const addToFavoriteAC = (cityName) => ({type: ADD_TO_FAVORITE, cityName})
+export const deleteFromFavorite = (cityName) => ({type: DELETE_FROM_FAVORITE, cityName})
 
-export const deleteFromFavorite = (name) => {
-    return (dispatch) => dispatch({type: DELETE_FROM_FAVORITE, name})
-}
+export default favoriteReducer;

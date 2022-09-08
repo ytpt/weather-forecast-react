@@ -27,3 +27,11 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+.input_block_search_icon {
+  font-size: 25px;
+}
+
+.input_block_search_icon:hover {
+  color: red;
+}
