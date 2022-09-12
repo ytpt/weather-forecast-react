@@ -17,8 +17,8 @@ const favoriteReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favCities: [...state.favCities, {
-                    id: Math.floor(Math.random() * 1000),
-                    name: action.name
+                    id: Math.floor(Math.random() * 1000000),
+                    name: action.cityName
                 }]
             }
         }
@@ -36,6 +36,6 @@ const favoriteReducer = (state = initialState, action) => {
 }
 
 export const addToFavoriteAC = (cityName) => ({type: ADD_TO_FAVORITE, cityName})
-export const deleteFromFavorite = (cityName) => ({type: DELETE_FROM_FAVORITE, cityName})
+export const deleteFromFavoriteAC = (cityId) => ({type: DELETE_FROM_FAVORITE, cityId})
 
 export default favoriteReducer;

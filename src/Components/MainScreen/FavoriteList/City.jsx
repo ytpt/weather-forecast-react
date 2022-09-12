@@ -1,13 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ImCross} from 'react-icons/im';
 import s from './FavoriteCity.module.css';
-import {deleteFromFavorite} from "../../../redux/reducers/favorite-reducer";
+import {getForecast} from "../../../api";
 
-const City = ({city}) => {
+const City = ({city, deleteFromFavList}) => {
+
     return (
         <li className={s.favCity}>
-            <p>{city.name}</p>
-            <ImCross className={s.favCity_icon} onClick={deleteFromFavorite} />
+            <a className={s.favCityLink} onClick={() => getForecast(city.id)}>
+                <p id={'cityName'}>{city.name}</p>
+            </a>
+            <button onClick={() => deleteFromFavList(city.id)}>
+                <ImCross className={s.favCity_icon} />
+            </button>
         </li>
     )
 }

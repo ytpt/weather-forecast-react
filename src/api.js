@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const api ={
     url: 'http://api.openweathermap.org/data/2.5/weather',
     key: 'f660a2fb1e4bad108d6160b7f58c555f'
@@ -8,9 +10,8 @@ const makeIconUrl = (iconId) => `http://openweathermap.org/img/wn/${iconId}@2x.p
 const getForecast = async(city) => {
     const apiUrl = `${api.url}?q=${city}&appid=${api.key}&units=metric`;
 
-    const data = await fetch(apiUrl)
-        .then(res => res.json())
-        .then(data => data);
+    const data = await axios.get(apiUrl)
+        .then(res => res.data)
 
     const {
         weather,

@@ -42,7 +42,13 @@ const App = () => {
                     </button>
                 </form>
             </div>
-            { weather && (<MainScreen favCities={favCities} weather={weather} />) }
+            { weather && (
+                <MainScreen
+                    favCities={favCities}
+                    weather={weather}
+                    getForecast={getForecast}
+                />)
+            }
         </div>
     );
 }

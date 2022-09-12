@@ -1,14 +1,25 @@
+.favCityLink {
+    cursor: pointer;
+}
+
 .favCity {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    overflow: hidden;
 }
 
-.favCity p {
+.favList p {
     font-size: 22px;
     margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.favCity button {
+    border: none;
+    background-color: transparent;
 }
 
 .favCity_icon  {
@@ -18,12 +29,4 @@
 
 .favCity_icon:hover {
     color: red;
-}
-
-.favCityList {
-    padding: 0 0 5px 15px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
 }
