@@ -10,6 +10,7 @@ const App = () => {
     let [city, setCity] = useState('');
 
     useEffect(() => {
+
         document.querySelector('#cityForm').addEventListener('submit', (e) => {
             e.preventDefault();
             city = document.querySelector('#cityName').value;
@@ -18,7 +19,7 @@ const App = () => {
                 setWeather(await getForecast(city));
             }
 
-            { city !== '' && fetchWeatherData() }
+            fetchWeatherData()
 
             setCity('');
         });
@@ -42,13 +43,7 @@ const App = () => {
                     </button>
                 </form>
             </div>
-            { weather && (
-                <MainScreen
-                    favCities={favCities}
-                    weather={weather}
-                    getForecast={getForecast}
-                />)
-            }
+            <MainScreen favCities={favCities} weather={weather} />
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from './MainScreen.module.css';
 import Buttons from "./Buttons/Buttons";
 import {AiOutlineHeart} from 'react-icons/ai';
@@ -6,20 +6,20 @@ import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import {useDispatch} from "react-redux";
 
-const MainScreen = ({favCities, weather, getForecast}) => {
+const MainScreen = ({favCities, weather}) => {
 
     const dispatch = useDispatch();
     const addToFavList = (cityName, favCities) => {
+        const likeBtn = document.querySelector('#likeBtn')
+
         if (favCities.find(el => el.name === cityName)) {
-            const likeBtn = document.querySelector('#likeBtn')
             likeBtn.style.color = 'red';
         } else {
-            dispatch(addToFavoriteAC(cityName));
-            const likeBtn = document.querySelector('#likeBtn')
+            dispatch(addToFavoriteAC(cityName))
             likeBtn.style.color = 'red';
         }
-
     }
+
     const deleteFromFavList = (cityId) => {
         dispatch(deleteFromFavoriteAC(cityId));
     }
@@ -32,15 +32,23 @@ const MainScreen = ({favCities, weather, getForecast}) => {
         />
     })
 
+    useEffect(() => {
+        localStorage.setItem("favorites", favCities.map(elem => elem.name));
+    }, [favCities]);
 
     return (
         <div className={s.main}>
             <div className={s.main_info}>
                 <div className={s.main_info_forecast}>
-                    <h2>{`${Math.round(weather.temp)}°C`}</h2>
-                    <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
+                    <h2>{weather ? `${Math.round(weather.temp)}°C` : '°C'}</h2>
+                    {
+                        weather
+                            ? <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
+                            : <img alt='Weather icon'/>
+                    }
+
                     <div className={s.add_favorite}>
-                        <h3>{`${weather.name}, ${weather.country}`}</h3>
+                        <h3>{weather ? `${weather.name}` : 'City'}</h3>
                         <button id={'likeBtn'} onClick={() => addToFavList(weather.name, favCities)}>
                             <AiOutlineHeart className={s.add_favorite_icon} />
                         </button>

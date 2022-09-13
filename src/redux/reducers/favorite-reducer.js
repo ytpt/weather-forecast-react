@@ -1,11 +1,11 @@
 const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 const DELETE_FROM_FAVORITE = 'DELETE_FROM_FAVORITE';
 
-const initialState = {
+export const initialState = {
     favCities: [
         {id: 1, name: 'Bali'},
-        {id: 2, name: 'Dane'},
-        {id: 3, name: 'Kilo'},
+        {id: 2, name: 'Dubrovnik'},
+        {id: 3, name: 'Budva'},
         {id: 4, name: 'Tomsk'},
         {id: 5, name: 'Dubai'}
     ]
