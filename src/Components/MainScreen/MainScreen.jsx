@@ -5,31 +5,34 @@ import {AiOutlineHeart} from 'react-icons/ai';
 import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import {useDispatch} from "react-redux";
+import {getForecast} from "../../api";
 
 const MainScreen = ({favCities, weather}) => {
-
+    const likeBtn = document.querySelector('#likeBtn')
     const dispatch = useDispatch();
-    const addToFavList = (cityName, favCities) => {
-        const likeBtn = document.querySelector('#likeBtn')
 
+    const addToFavList = (cityName, favCities) => {
         if (favCities.find(el => el.name === cityName)) {
             likeBtn.style.color = 'red';
         } else {
-            dispatch(addToFavoriteAC(cityName))
+            dispatch(addToFavoriteAC(cityName));
             likeBtn.style.color = 'red';
         }
     }
 
-    const deleteFromFavList = (cityId) => {
+    const deleteFromFavList = (cityId, favCities) => {
         dispatch(deleteFromFavoriteAC(cityId));
     }
 
     const favCityList = favCities.map(city => {
-        return <City
-            key={city.id}
-            city={city}
-            deleteFromFavList={deleteFromFavList}
-        />
+        return (
+            <City
+                key={city.id}
+                favCities={favCities}
+                city={city}
+                deleteFromFavList={deleteFromFavList}
+            />
+        )
     })
 
     useEffect(() => {
@@ -44,11 +47,11 @@ const MainScreen = ({favCities, weather}) => {
                     {
                         weather
                             ? <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
-                            : <img alt='Weather icon'/>
+                            : ''
                     }
 
                     <div className={s.add_favorite}>
-                        <h3>{weather ? `${weather.name}` : 'City'}</h3>
+                        <h3 id={'city'}>{weather ? `${weather.name}` : 'City'}</h3>
                         <button id={'likeBtn'} onClick={() => addToFavList(weather.name, favCities)}>
                             <AiOutlineHeart className={s.add_favorite_icon} />
                         </button>

@@ -16,12 +16,11 @@ const App = () => {
             city = document.querySelector('#cityName').value;
 
             const fetchWeatherData = async () => {
-                setWeather(await getForecast(city));
+                    setWeather(await getForecast(city));
             }
-
             fetchWeatherData()
-
             setCity('');
+            localStorage.setItem('city', city);
         });
     }, []);
 

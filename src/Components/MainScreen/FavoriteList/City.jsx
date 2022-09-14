@@ -1,13 +1,19 @@
 import React from "react";
 import {ImCross} from 'react-icons/im';
 import s from './FavoriteCity.module.css';
-import {getForecast} from "../../../api";
 
 const City = ({city, deleteFromFavList}) => {
 
+    const setFavCityToStorage = () => {
+        localStorage.setItem('favCity', city.name);
+    }
+
     return (
         <li className={s.favCity}>
-            <a id={'favCityLink'} className={s.favCityLink} onClick={() => getForecast(city.name)}>
+            <a id={'favCityLink'}
+               className={s.favCityLink}
+               onClick={setFavCityToStorage}
+            >
                 <p id={'favCityName'}>{city.name}</p>
             </a>
             <button onClick={() => deleteFromFavList(city.id)}>

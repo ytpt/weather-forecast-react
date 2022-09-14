@@ -98,3 +98,36 @@
     font-weight: 400;
 }
 
+.favCityLink {
+    cursor: pointer;
+}
+
+.favCity {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    overflow: hidden;
+}
+
+.favList p {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.favCity button {
+    border: none;
+    background-color: transparent;
+}
+
+.favCity_icon  {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.favCity_icon:hover {
+    color: red;
+}
+
