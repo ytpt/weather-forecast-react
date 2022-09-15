@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import s from './MainScreen.module.css';
-import Buttons from "./Buttons/Buttons";
+import ButtonsList from "./Buttons/ButtonsList";
 import {AiOutlineHeart} from 'react-icons/ai';
 import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
@@ -24,7 +24,6 @@ const MainScreen = ({favCities, weather, }) => {
     const deleteFromFavList = (cityId) => {
         dispatch(deleteFromFavoriteAC(cityId));
     }
-
 
     const favCityList = favCities.map(city => {
         return (
@@ -60,7 +59,7 @@ const MainScreen = ({favCities, weather, }) => {
                         </button>
                     </div>
                 </div>
-                <Buttons />
+                <ButtonsList />
             </div>
             <div className={s.favList}>
                 <h3>Added locations:</h3>

@@ -1,0 +1,24 @@
+.buttonsBlock > .active {
+    background: #000;
+    color: #fff;
+}
+
+.buttonsBlock {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.btnElem {
+    color: black;
+}
+
+.button {
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 16px;
+    font-size: 15px;
+}
