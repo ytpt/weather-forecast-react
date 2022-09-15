@@ -10,13 +10,12 @@ const App = () => {
     let [city, setCity] = useState('');
 
     useEffect(() => {
-
         document.querySelector('#cityForm').addEventListener('submit', (e) => {
             e.preventDefault();
             city = document.querySelector('#cityName').value;
 
             const fetchWeatherData = async () => {
-                    setWeather(await getForecast(city));
+                setWeather(await getForecast(city));
             }
             fetchWeatherData()
             setCity('');

@@ -1,28 +1,30 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import s from './MainScreen.module.css';
 import Buttons from "./Buttons/Buttons";
 import {AiOutlineHeart} from 'react-icons/ai';
 import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import {useDispatch} from "react-redux";
-import {getForecast} from "../../api";
 
-const MainScreen = ({favCities, weather}) => {
+const MainScreen = ({favCities, weather, }) => {
+
     const likeBtn = document.querySelector('#likeBtn')
     const dispatch = useDispatch();
 
     const addToFavList = (cityName, favCities) => {
         if (favCities.find(el => el.name === cityName)) {
             likeBtn.style.color = 'red';
+            localStorage.setItem('favCity', cityName)
         } else {
             dispatch(addToFavoriteAC(cityName));
             likeBtn.style.color = 'red';
         }
     }
 
-    const deleteFromFavList = (cityId, favCities) => {
+    const deleteFromFavList = (cityId) => {
         dispatch(deleteFromFavoriteAC(cityId));
     }
+
 
     const favCityList = favCities.map(city => {
         return (
@@ -31,13 +33,14 @@ const MainScreen = ({favCities, weather}) => {
                 favCities={favCities}
                 city={city}
                 deleteFromFavList={deleteFromFavList}
+                weather={weather}
             />
         )
     })
 
     useEffect(() => {
         localStorage.setItem("favorites", favCities.map(elem => elem.name));
-    }, [favCities]);
+    }, [favCities, weather]);
 
     return (
         <div className={s.main}>

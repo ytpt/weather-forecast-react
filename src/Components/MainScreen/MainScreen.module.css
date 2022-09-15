@@ -80,6 +80,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-y: scroll;
+    max-height: 500px;
 }
 
 .favList ul {

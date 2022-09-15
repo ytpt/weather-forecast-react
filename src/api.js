@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 
 const api ={
     url: 'http://api.openweathermap.org/data/2.5/weather',
@@ -23,15 +24,15 @@ const getForecast = async(city) => {
     const {description, icon, main} = weather[0]
 
     return {
-        description,
-        iconUrl: makeIconUrl(icon),
-        temp,
-        feels_like,
-        sunrise,
-        sunset,
-        country,
-        main,
-        name
+            description,
+            iconUrl: makeIconUrl(icon),
+            temp,
+            feels_like,
+            sunrise,
+            sunset,
+            country,
+            main,
+            name
     }
 }
 
