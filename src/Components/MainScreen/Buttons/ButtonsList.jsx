@@ -29,8 +29,7 @@ const ButtonsList = () => {
     return (
         <ul className={s.buttonsBlock}>
             <button key={1} id={'1'}
-                className={
-                    isActive === '1' ? classNames(s.active,s.button) : classNames(s.button)}
+                className={isActive === '1' ? classNames(s.active,s.button) : classNames(s.button)}
                 onClick={handleClick}>Now</button>
             <button key={2} id={'2'}
                 className={isActive === '2' ? classNames(s.active,s.button) : classNames(s.button)}
