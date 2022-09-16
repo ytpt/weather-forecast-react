@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const ButtonsList = () => {
 
-    const [isActive, setIsActive] = useState('1');
+    const [isActive, setIsActive] = useState('now');
 
     const handleClick = (event) => {
         setIsActive(event.target.id);
@@ -12,11 +12,11 @@ const ButtonsList = () => {
 
     return (
         <div className={s.buttonsBlock}>
-            <button key={1} id={'1'} onClick={handleClick} className={isActive === '1'
+            <button key={1} id={'now'} onClick={handleClick} className={isActive === 'now'
                 ? classNames(s.active,s.button) : classNames(s.button)}>Now</button>
-            <button key={2} id={'2'} onClick={handleClick} className={isActive === '2'
+            <button key={2} id={'details'} onClick={handleClick} className={isActive === 'details'
                 ? classNames(s.active,s.button) : classNames(s.button)}>Details</button>
-            <button key={3} id={'3'} onClick={handleClick} className={isActive === '3'
+            <button key={3} id={'forecast'} onClick={handleClick} className={isActive === 'forecast'
                 ? classNames(s.active,s.button) : classNames(s.button)}>Forecast</button>
         </div>
     )

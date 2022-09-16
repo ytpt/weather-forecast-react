@@ -17,7 +17,7 @@ const getForecast = async(city) => {
     const {
         weather,
         main: { temp, feels_like },
-        sys: { sunrise, sunset, country },
+        sys: { sunrise, sunset },
         name,
     } = data;
 
@@ -30,7 +30,6 @@ const getForecast = async(city) => {
             feels_like,
             sunrise,
             sunset,
-            country,
             main,
             name
     }

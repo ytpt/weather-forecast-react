@@ -41,7 +41,7 @@ const App = () => {
                     </button>
                 </form>
             </div>
-            <MainScreen favCities={favCities} weather={weather} />
+            <MainScreen favCities={favCities} weather={weather} city={city}/>
         </div>
     );
 }
