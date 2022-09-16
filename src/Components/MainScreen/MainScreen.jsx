@@ -51,6 +51,7 @@ const MainScreen = ({favCities, weather, }) => {
                             ? <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
                             : ''
                     }
+
                     <div className={s.add_favorite}>
                         <h3 id={'city'}>{weather ? `${weather.name}` : 'City'}</h3>
                         <button id={'likeBtn'} onClick={() => addToFavList(weather.name, favCities)}>
