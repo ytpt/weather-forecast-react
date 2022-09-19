@@ -29,6 +29,10 @@
     margin-left: 10px;
 }
 
+.mainBlock {
+    min-height: 500px;
+}
+
 .main_info_forecast h2 {
     margin: 30px 0 0 15px;
     font-size: 35px;

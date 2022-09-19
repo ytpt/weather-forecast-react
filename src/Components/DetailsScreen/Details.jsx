@@ -3,7 +3,8 @@ import s from './Datails.module.css';
 
 const Details = ({weather}) => {
 
-    function currentDay (date) {
+    const date = new Date(weather.dt * 1000);
+    function currentDay(date) {
         let dd = String(date.getDate());
         const mm = getMonthName(date);
         return dd + ' ' + mm;
@@ -24,10 +25,9 @@ const Details = ({weather}) => {
             "November",
             "December"
         ];
+
         return monthNames[date.getMonth()];
     }
-
-    const date = new Date(weather.dt * 1000);
     currentDay(date);
 
         const sunriseDate = new Date(weather.sunrise * 1000);

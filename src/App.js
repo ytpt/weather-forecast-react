@@ -3,7 +3,7 @@ import s from './App.module.css';
 import MainScreen from "./Components/MainScreen/MainScreen";
 import {useSelector} from "react-redux";
 import {GoSearch} from 'react-icons/go';
-import {getForecast} from "./api";
+import {getWeather} from "./api";
 
 const App = () => {
     let [weather, setWeather] = useState(null);
@@ -15,7 +15,7 @@ const App = () => {
             city = document.querySelector('#cityName').value;
 
             const fetchWeatherData = async () => {
-                setWeather(await getForecast(city));
+                setWeather(await getWeather(city));
             }
             fetchWeatherData()
             setCity('');

@@ -1,0 +1,31 @@
+.forecastContent h2 {
+    font-size: 30px;
+    margin: 30px 0 30px 15px;
+}
+
+.forecastBlock {
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forecastTemp {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dateTime, .tempImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.forecastImg  p {
+    margin: 0;
+    padding: 0;
+}
