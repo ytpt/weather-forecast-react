@@ -1,0 +1,14 @@
+.detailsBlock h2 {
+    font-size: 30px;
+    margin: 30px 0 30px 15px;
+}
+
+.detailsBlock_list {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.detailsBlock_list li {
+    font-size: 22px;
+    margin-bottom: 10px;
+}

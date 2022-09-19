@@ -5,7 +5,7 @@ import favoriteReducer from './favorite-reducer';
 
 const rootReducer = () => combineReducers({
     favCities,
-    favoriteReducer
+    favoriteReducer,
 });
 
 export default rootReducer;

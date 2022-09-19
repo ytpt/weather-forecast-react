@@ -1,12 +1,14 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import {useDispatch} from "react-redux";
 import s from "./MainScreen.module.css";
+import classNames from "classnames";
 import Now from "../NowScreen/Now";
-import ButtonsList from "./Buttons/ButtonsList";
+import Forecast from "../ForecastScreen/Forecast";
+import Details from "../DetailsScreen/Details";
 
-const MainScreen = ({favCities, weather, city}) => {
+const MainScreen = ({favCities, weather}) => {
 
     const likeBtn = document.querySelector('#likeBtn')
     const dispatch = useDispatch();
@@ -41,24 +43,45 @@ const MainScreen = ({favCities, weather, city}) => {
         )
     })
 
-    return (
-        <div>
-            <div className={s.main}>
-                <div className={s.main_info}>
-                    <Now weather={weather} addToFavList={addToFavList} favCities={favCities}/>
-                    {/*<Details weather={weather} />*/}
-                    {/*<Forecast weather={weather} />*/}
-                    <ButtonsList />
+    const [childData, setChildData] = useState('now');
+    const [isActive, setIsActive] = useState('now');
+
+    const handleClick = (event) => {
+        setIsActive(event.target.id);
+        setChildData(event.target.id);
+    }
+
+    const active = classNames(s.active,s.button);
+    const passive = classNames(s.button);
+
+    return <div>
+        <div className={s.main}>
+            <div className={s.main_info}>
+                <div className={s.buttonsBlock}>
+                    <button key={1} id={'now'} onClick={handleClick}
+                        className={isActive !== 'now' ? passive : active}>Now</button>
+                    <button key={2} id={'details'} onClick={handleClick}
+                        className={'details' === isActive ? active : passive}>Details</button>
+                    <button key={3} id='forecast' onClick={handleClick}
+                        className={isActive === 'forecast' ? active : passive}>Forecast</button>
                 </div>
-                <div className={s.favList}>
-                    <h3>Added locations:</h3>
-                    <ul>
-                        {favCityList}
-                    </ul>
+                <div className={s.mainBlock}>
+                    {childData === 'now'
+                        && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />}
+                    {childData === 'details'
+                        && <Details weather={weather} />}
+                    {childData === 'forecast'
+                        && <Forecast weather={weather} />}
                 </div>
             </div>
+            <div className={s.favList}>
+                <h3>Added locations:</h3>
+                <ul>
+                    {favCityList}
+                </ul>
+            </div>
         </div>
-    )
+    </div>
 }
 
 export default MainScreen;

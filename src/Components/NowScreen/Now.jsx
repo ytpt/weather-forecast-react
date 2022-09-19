@@ -8,9 +8,7 @@ const Now = ({weather, addToFavList, favCities}) => {
             <div className={s.main_info_forecast}>
                 <h2>{weather ? `${Math.round(weather.temp)}°C` : '°C'}</h2>
                 {
-                    weather
-                        ? <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/>
-                        : ''
+                    weather ? <img alt='Weather icon' src={weather.iconUrl} width={100} height={100}/> : ''
                 }
                 <div className={s.add_favorite}>
                     <h3 id={'city'}>{weather ? `${weather.name}` : 'City'}</h3>

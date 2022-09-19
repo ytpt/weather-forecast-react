@@ -18,7 +18,8 @@ const getForecast = async(city) => {
         weather,
         main: { temp, feels_like },
         sys: { sunrise, sunset },
-        name,
+        dt,
+        name
     } = data;
 
     const {description, icon, main} = weather[0]
@@ -31,7 +32,8 @@ const getForecast = async(city) => {
             sunrise,
             sunset,
             main,
-            name
+            dt,
+            name,
     }
 }
 
