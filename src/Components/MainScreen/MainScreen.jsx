@@ -60,10 +60,12 @@ const MainScreen = ({favCities, weather}) => {
                 <div className={s.buttonsBlock}>
                     <button key={1} id={'now'} onClick={handleClick}
                         className={isActive !== 'now' ? passive : active}>Now</button>
-                    <button key={2} id={'details'} onClick={handleClick}
-                        className={'details' === isActive ? active : passive}>Details</button>
-                    <button key={3} id='forecast' onClick={handleClick}
-                        className={isActive === 'forecast' ? active : passive}>Forecast</button>
+                    {weather ? <button key={2} id={'details'} onClick={handleClick}
+                               className={isActive === 'details' ? active : passive}>Details</button>
+                        : <button disabled className={passive}>Details</button>}
+                    {weather ? <button key={3} id='forecast' onClick={handleClick}
+                               className={isActive === 'forecast' ? active : passive}>Forecast</button>
+                        : <button disabled className={passive}>Forecast</button>}
                 </div>
                 <div className={s.mainBlock}>
                     {childData === 'now'
