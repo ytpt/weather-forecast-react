@@ -6,13 +6,13 @@ const apiWeather ={
     key: 'f660a2fb1e4bad108d6160b7f58c555f'
 }
 
-const makeIconUrl = (iconId) => `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+const makeWeatherIconUrl = (iconId) => `http://openweathermap.org/img/wn/${iconId}@2x.png`;
 
 const getWeather = async(city) => {
     const apiWeatherUrl = `${apiWeather.url}?q=${city}&appid=${apiWeather.key}&units=metric`;
     const dataWeather = await axios.get(apiWeatherUrl)
         .then(res => res.data)
-    console.log(dataWeather);
+        .catch(error => console.log(error.message));
 
     const {
         weather,
@@ -25,15 +25,15 @@ const getWeather = async(city) => {
     const {description, icon, main} = weather[0]
 
     return {
-            description,
-            iconUrl: makeIconUrl(icon),
-            temp,
-            feels_like,
-            sunrise,
-            sunset,
-            main,
-            dt,
-            name,
+        description,
+        iconUrl: makeWeatherIconUrl(icon),
+        temp,
+        feels_like,
+        sunrise,
+        sunset,
+        main,
+        dt,
+        name
     }
 }
 
@@ -43,15 +43,10 @@ const apiForecast ={
 }
 
 const getForecast = async(city) => {
-    const apiForecastUrl = `${apiForecast.url}?q=${city}&appid=${apiForecast.key}&units=metric`;
-    const dataForecast = await axios.get(apiForecastUrl)
-        .then(res => res.data)
-    console.log(dataForecast);
+    const apiForecastUrl = `${apiForecast.url}?q=${city}&appid=${apiForecast.key}`;
+    return await axios.get(apiForecastUrl)
+        .then(res => res.data.list)
+        .catch(error => console.log(error.message));
 }
 
 export { getWeather, getForecast };
-
-
-
-//НУЖНО ДОБАВИТЬ ВЫВОД ИНФОРМАЦИИ,
-// КОНКРЕТНО forecast.list чтобы ОТРАЗИТЬ ИНФОРМАЦИЮ В КОМПОНЕНТЕ FORECAST

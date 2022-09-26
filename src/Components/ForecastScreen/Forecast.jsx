@@ -1,60 +1,67 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import s from './Forecast.module.css';
+import {getForecast} from "../../api";
+import ListItem from './List/ListItem';
 
 const Forecast = ({weather}) => {
+    let forecastList = null;
+    const [list, setList] = useState([]);
 
-    const date = new Date(weather.dt * 1000);
-    function currentDay(date) {
-        let dd = String(date.getDate());
-        const mm = getMonthName(date);
-        return dd + ' ' + mm;
-    }
+    useEffect(() => {
+        const getForecastData = async () => {
+            forecastList = await getForecast(weather.name);
+            let listItem = [];
 
-    function getMonthName(date){
-        const monthNames = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ];
+            forecastList.map(item => {
+                const date = new Date(item.dt * 1000);
+                const currentDate = currentDay(date);
+                const time = ((date.getHours() < 10 ? '0' : '') + date.getHours()) + ':' +
+                    ((date.getMinutes() < 10 ? '0' : '') + date.getMinutes())
+                const tempFeels = Math.round(item.main.feels_like - 273.15);
+                const temp = Math.round(item.main.temp - 273.15);
+                const weather = item.weather[0];
+                const conditions = weather.main;
+                const makeWeatherIconUrl = (iconId) => `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+                const icon = makeWeatherIconUrl(weather.icon);
 
-        return monthNames[date.getMonth()];
-    }
+                let i = <ListItem key={item.dt} date={date} currentDate={currentDate} time={time}
+                            tempFeels={tempFeels} temp={temp} conditions={conditions} icon={icon} />
+                listItem.push(i)
+            })
+            setList(listItem);
 
-    const forecastList = weather.data;
-    console.log(forecastList)
-    forecastList.map(item => {
-        currentDay(date);
-        console.log(item);
-    })
+            function getMonthName(date){
+                const monthNames = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ];
+
+                return monthNames[date.getMonth()];
+            }
+
+            function currentDay(date) {
+                let dd = String(date.getDate());
+                const mm = getMonthName(date);
+                return dd + ' ' + mm;
+            }
+        }
+        getForecastData();
+    }, [forecastList]);
 
     return (
         <div className={s.forecastContent}>
             <h2>{weather.name}</h2>
-            <div className={s.forecastBlock}>
-                <div className={s.dateTime}>
-                    {/*<p>${date}</p>*/}
-                    {/*<p>${time}</p>*/}
-                </div>
-                <div className={s.tempImg}>
-                    <ul className={s.forecastTemp}>
-                        <li>Temperature: {Math.round(weather.temp)}°</li>
-                        <li>Feels like: {Math.round(weather.feels_like)}°</li>
-                    </ul>
-                    <div className={s.forecastImg}>
-                        <p>{weather.main}</p>
-                        <img src={weather.iconUrl} width="40" height="40" alt={'weather img'}/>
-                    </div>
-                </div>
-            </div>
+            {list}
         </div>
     )
 }

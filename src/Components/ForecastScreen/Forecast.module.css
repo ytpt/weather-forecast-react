@@ -1,3 +1,8 @@
+.forecastContent {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
 .forecastContent h2 {
     font-size: 30px;
     margin: 30px 0 30px 15px;
@@ -10,6 +15,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.forecast_dateTime, .forecast_tempImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.forecast_dateTime p, .forecast_tempImg p {
+    font-size: 15px;
+}
+
+.forecastBlock ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 .forecastTemp {
@@ -25,7 +46,7 @@
     padding: 0;
 }
 
-.forecastImg  p {
+.forecast_img  p {
     margin: 0;
     padding: 0;
 }
