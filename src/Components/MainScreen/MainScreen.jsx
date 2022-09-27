@@ -51,6 +51,30 @@ const MainScreen = ({favCities, weather}) => {
     const active = classNames(s.active,s.button);
     const passive = classNames(s.button);
 
+    function getMonthName(date){
+        const monthNames = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+        return monthNames[date.getMonth()];
+    }
+
+    function currentDay(date) {
+        let dd = String(date.getDate());
+        const mm = getMonthName(date);
+        return dd + ' ' + mm;
+    }
+
     return <div>
         <div className={s.main}>
             <div className={s.main_info}>
@@ -72,9 +96,15 @@ const MainScreen = ({favCities, weather}) => {
                             />
                     }
                     {childData === 'details'
-                        && <Details weather={weather} />}
+                        && <Details
+                            weather={weather}
+                            currentDay={currentDay} />
+                    }
                     {childData === 'forecast'
-                        && <Forecast weather={weather} />}
+                        && <Forecast
+                            weather={weather}
+                            currentDay={currentDay} />
+                    }
                 </div>
             </div>
             <div className={s.favList}>

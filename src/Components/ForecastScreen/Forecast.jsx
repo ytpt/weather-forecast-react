@@ -3,7 +3,7 @@ import s from './Forecast.module.css';
 import {getForecast} from "../../api";
 import ListItem from './List/ListItem';
 
-const Forecast = ({weather}) => {
+const Forecast = ({weather, currentDay}) => {
     let forecastList = null;
     const [list, setList] = useState([]);
 
@@ -29,31 +29,6 @@ const Forecast = ({weather}) => {
                 listItem.push(i)
             })
             setList(listItem);
-
-            function getMonthName(date){
-                const monthNames = [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December"
-                ];
-
-                return monthNames[date.getMonth()];
-            }
-
-            function currentDay(date) {
-                let dd = String(date.getDate());
-                const mm = getMonthName(date);
-                return dd + ' ' + mm;
-            }
         }
         getForecastData();
     }, [forecastList, weather]);

@@ -1,33 +1,9 @@
 import React from "react";
 import s from './Datails.module.css';
 
-const Details = ({weather}) => {
+const Details = ({weather, currentDay}) => {
 
     const date = new Date(weather.dt * 1000);
-    function currentDay(date) {
-        let dd = String(date.getDate());
-        const mm = getMonthName(date);
-        return dd + ' ' + mm;
-    }
-
-    function getMonthName(date){
-        const monthNames = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ];
-
-        return monthNames[date.getMonth()];
-    }
     currentDay(date);
 
         const sunriseDate = new Date(weather.sunrise * 1000);
