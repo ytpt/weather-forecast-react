@@ -20,7 +20,7 @@ const App = () => {
             fetchWeatherData()
             setCity('');
             localStorage.setItem('city', city);
-        });
+        })
     }, []);
 
     const favCities = useSelector((store) => store.favCities.favCities);

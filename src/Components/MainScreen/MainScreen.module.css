@@ -57,7 +57,7 @@
     font-size: 30px;
 }
 
-.add_favorite_icon:hover {
+.add_favorite_icon:hover, .add_favorite__active {
     color: red;
 }
 

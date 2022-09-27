@@ -10,16 +10,13 @@ import Details from "../DetailsScreen/Details";
 
 const MainScreen = ({favCities, weather}) => {
 
-    const likeBtn = document.querySelector('#likeBtn')
     const dispatch = useDispatch();
 
     const addToFavList = (cityName, favCities) => {
         if (favCities.find(el => el.name === cityName)) {
-            likeBtn.style.color = 'red';
             localStorage.setItem('favCity', cityName)
         } else {
             dispatch(addToFavoriteAC(cityName));
-            likeBtn.style.color = 'red';
         }
     }
 
@@ -69,7 +66,11 @@ const MainScreen = ({favCities, weather}) => {
                 </div>
                 <div className={s.mainBlock}>
                     {childData === 'now'
-                        && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />}
+                        && <Now weather={weather}
+                                addToFavList={addToFavList}
+                                favCities={favCities}
+                            />
+                    }
                     {childData === 'details'
                         && <Details weather={weather} />}
                     {childData === 'forecast'

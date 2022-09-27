@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ImCross} from 'react-icons/im';
 import s from './FavoriteCity.module.css';
 

@@ -56,7 +56,7 @@ const Forecast = ({weather}) => {
             }
         }
         getForecastData();
-    }, [forecastList]);
+    }, [forecastList, weather]);
 
     return (
         <div className={s.forecastContent}>
