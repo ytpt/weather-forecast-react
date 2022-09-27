@@ -12,7 +12,10 @@ const getWeather = async(city) => {
     const apiWeatherUrl = `${apiWeather.url}?q=${city}&appid=${apiWeather.key}&units=metric`;
     const dataWeather = await axios.get(apiWeatherUrl)
         .then(res => res.data)
-        .catch(error => console.log(error.message));
+        .catch(error => {
+            alert('Такого города нет');
+            console.log(error.message());
+        })
 
     const {
         weather,

@@ -90,21 +90,10 @@ const MainScreen = ({favCities, weather}) => {
                 </div>
                 <div className={s.mainBlock}>
                     {childData === 'now'
-                        && <Now weather={weather}
-                                addToFavList={addToFavList}
-                                favCities={favCities}
-                            />
+                        && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />
                     }
-                    {childData === 'details'
-                        && <Details
-                            weather={weather}
-                            currentDay={currentDay} />
-                    }
-                    {childData === 'forecast'
-                        && <Forecast
-                            weather={weather}
-                            currentDay={currentDay} />
-                    }
+                    {childData === 'details' && <Details weather={weather} currentDay={currentDay} />}
+                    {childData === 'forecast' && <Forecast weather={weather} currentDay={currentDay} />}
                 </div>
             </div>
             <div className={s.favList}>
