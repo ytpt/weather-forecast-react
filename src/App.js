@@ -1,28 +1,44 @@
 import React, {useEffect, useState} from "react";
 import s from './App.module.css';
 import MainScreen from "./Components/MainScreen/MainScreen";
-import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {GoSearch} from 'react-icons/go';
 import {getWeather} from "./api";
+import {updateMainCityAC} from "./redux/reducers/mainCity-reducer";
+
 
 const App = () => {
-    const [weather, setWeather] = useState(null);
-    let [city, setCity] = useState('');
 
-    let favCities = useSelector((store) => store.favCities.favCities);
+    const dispatch = useDispatch();
+    let [city, setCity] = useState('');
+    const [weather, setWeather] = useState(null);
+    const mainCity = localStorage.getItem('mainCity');
 
     useEffect(() => {
+        if (mainCity !== null) {
+            setCity(mainCity);
+            let fetchWeatherData = async () => {
+                setWeather(await getWeather(mainCity));
+            }
+            fetchWeatherData();
+            setCity('');
+        }
+    }, []);
 
+
+    useEffect(() => {
         document.querySelector('#cityForm').addEventListener('submit', (e) => {
             e.preventDefault();
             city = document.querySelector('#cityName').value;
+            localStorage.setItem('mainCity', city);
 
-            const fetchWeatherData = async () => {
+            let fetchWeatherData = async () => {
                 setWeather(await getWeather(city));
             }
-            fetchWeatherData()
+            fetchWeatherData();
+
+            dispatch(updateMainCityAC(city));
             setCity('');
-            localStorage.setItem('city', city);
         })
     }, []);
 
@@ -32,9 +48,9 @@ const App = () => {
                 <form id={'cityForm'}>
                     <input type='text'
                            id={'cityName'}
+                           value={city}
                            maxLength='50'
                            placeholder={'Enter city'}
-                           value={city}
                            onChange={e => setCity(e.target.value)}
                            required />
                     <button type='submit' id={'searchBtn'}>
@@ -42,7 +58,7 @@ const App = () => {
                     </button>
                 </form>
             </div>
-            <MainScreen favCities={favCities} weather={weather} />
+            <MainScreen weather={weather} />
         </div>
     );
 }
