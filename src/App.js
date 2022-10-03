@@ -6,10 +6,13 @@ import {GoSearch} from 'react-icons/go';
 import {getWeather} from "./api";
 
 const App = () => {
-    let [weather, setWeather] = useState(null);
+    const [weather, setWeather] = useState(null);
     let [city, setCity] = useState('');
 
+    let favCities = useSelector((store) => store.favCities.favCities);
+
     useEffect(() => {
+
         document.querySelector('#cityForm').addEventListener('submit', (e) => {
             e.preventDefault();
             city = document.querySelector('#cityName').value;
@@ -22,8 +25,6 @@ const App = () => {
             localStorage.setItem('city', city);
         })
     }, []);
-
-    const favCities = useSelector((store) => store.favCities.favCities);
 
     return (
         <div className={s.container}>

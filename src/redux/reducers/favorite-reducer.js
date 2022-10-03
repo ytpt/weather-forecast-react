@@ -17,7 +17,7 @@ const favoriteReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favCities: [...state.favCities, {
-                    id: Math.floor(Math.random() * 1000000),
+                    id: state.favCities.length + 1,
                     name: action.cityName
                 }]
             }

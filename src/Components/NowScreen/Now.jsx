@@ -4,6 +4,14 @@ import {AiOutlineHeart} from 'react-icons/ai';
 
 const Now = ({weather, addToFavList, favCities}) => {
 
+    const handleClick = () => {
+        if (favCities.find(el => el.name === weather.name)) {
+            localStorage.setItem('favCity', weather.name);
+        }
+        addToFavList(weather.name, favCities);
+
+    }
+
     return (
         <div className={s.main_info}>
             <div className={s.main_info_forecast}>
@@ -13,7 +21,7 @@ const Now = ({weather, addToFavList, favCities}) => {
                     : ''}
                 <div className={s.add_favorite}>
                     <h3 id={'city'}>{weather ? `${weather.name}` : 'City'}</h3>
-                    <button id={'likeBtn'} onClick={() => addToFavList(weather.name, favCities)}>
+                    <button id={'likeBtn'} onClick={handleClick}>
                         <AiOutlineHeart className={s.add_favorite_icon} />
                     </button>
                 </div>
