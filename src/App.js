@@ -15,7 +15,7 @@ const App = () => {
     const mainCity = localStorage.getItem('mainCity');
 
     useEffect(() => {
-        if (mainCity !== null) {
+        if (mainCity) {
             setCity(mainCity);
             let fetchWeatherData = async () => {
                 setWeather(await getWeather(mainCity));
@@ -24,7 +24,6 @@ const App = () => {
             setCity('');
         }
     }, []);
-
 
     useEffect(() => {
         document.querySelector('#cityForm').addEventListener('submit', (e) => {
