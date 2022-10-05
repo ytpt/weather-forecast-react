@@ -1,20 +1,23 @@
 import React, {useEffect, useState} from "react";
 import City from "./FavoriteList/City";
 import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
-import {useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 import s from "./MainScreen.module.css";
 import classNames from "classnames";
 import Now from "../NowScreen/Now";
 import Forecast from "../ForecastScreen/Forecast";
 import Details from "../DetailsScreen/Details";
 
-const MainScreen = ({favCities, weather}) => {
+const MainScreen = ({weather, setWeather, dispatch}) => {
 
-    const dispatch = useDispatch();
+    let favCities = useSelector((store) => store.favCities.favCities);
+
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(favCities));
+    }, [favCities, weather]);
 
     const addToFavList = (cityName, favCities) => {
         if (favCities.find(el => el.name === cityName)) {
-            localStorage.setItem('favCity', cityName)
         } else {
             dispatch(addToFavoriteAC(cityName));
         }
@@ -24,18 +27,15 @@ const MainScreen = ({favCities, weather}) => {
         dispatch(deleteFromFavoriteAC(cityId));
     }
 
-    useEffect(() => {
-        localStorage.setItem("favorites", favCities.map(elem => elem.name));
-    }, [favCities, weather]);
-
-    const favCityList = favCities.map(city => {
+    //Проблема !ТУТ! список город строится на основе старого favCities
+    const favList = favCities.map(city => {
         return (
             <City
                 key={city.id}
-                favCities={favCities}
                 city={city}
                 deleteFromFavList={deleteFromFavList}
-                weather={weather}
+                setWeather={setWeather}
+                dispatch={dispatch}
             />
         )
     })
@@ -80,17 +80,17 @@ const MainScreen = ({favCities, weather}) => {
             <div className={s.main_info}>
                 <div className={s.buttonsBlock}>
                     <button key={1} id={'now'} onClick={handleClick}
-                        className={isActive !== 'now' ? passive : active}>Now</button>
+                            className={isActive !== 'now' ? passive : active}>Now</button>
                     {weather ? <button key={2} id={'details'} onClick={handleClick}
-                               className={isActive === 'details' ? active : passive}>Details</button>
+                                       className={isActive === 'details' ? active : passive}>Details</button>
                         : <button disabled className={passive}>Details</button>}
                     {weather ? <button key={3} id='forecast' onClick={handleClick}
-                               className={isActive === 'forecast' ? active : passive}>Forecast</button>
+                                       className={isActive === 'forecast' ? active : passive}>Forecast</button>
                         : <button disabled className={passive}>Forecast</button>}
                 </div>
                 <div className={s.mainBlock}>
                     {childData === 'now'
-                        && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />
+                    && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />
                     }
                     {childData === 'details' && <Details weather={weather} currentDay={currentDay} />}
                     {childData === 'forecast' && <Forecast weather={weather} currentDay={currentDay} />}
@@ -99,7 +99,7 @@ const MainScreen = ({favCities, weather}) => {
             <div className={s.favList}>
                 <h3>Added locations:</h3>
                 <ul>
-                    {favCityList}
+                    {favList}
                 </ul>
             </div>
         </div>
