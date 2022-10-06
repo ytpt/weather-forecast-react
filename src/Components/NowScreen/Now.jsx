@@ -7,6 +7,7 @@ const Now = ({weather, addToFavList, favCities}) => {
     const handleClick = () => {
         if (favCities.find(el => el.name === weather.name)) {
             localStorage.setItem('favCity', weather.name);
+            alert(`${weather.name} is already in favorite list!`);
         }
         addToFavList(weather.name, favCities);
 
