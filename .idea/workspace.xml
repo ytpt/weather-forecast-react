@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a97ea540-d68b-40fa-9969-28049025f921" name="Default Changelist" comment="- Deleted id value from initialState.favCities in favorite-reducer.js;&#10;- Refactor favoriteReducer cases;&#10;- Refactor deleteFromFavoriteAC;">
+      <change beforePath="$PROJECT_DIR$/src/Components/NowScreen/Now.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NowScreen/Now.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2CvpU6gldkRRxej5yYzs3J2xhXZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="ToolWindowTypeScript 3.9.5.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Anna\HTML\js\greatMarafon\react\weather-app\src\Components" />
+      <recent name="E:\Anna\HTML\js\greatMarafon\react\weather-app\src" />
+      <recent name="E:\Anna\HTML\js\greatMarafon\react\weather-app\src\App" />
+      <recent name="E:\Anna\HTML\js\greatMarafon\react\weather-app\src\Components\MainScreen" />
+      <recent name="E:\Anna\HTML\js\greatMarafon\react\weather-app\src\Components\MainScreen\FavoriteList" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a97ea540-d68b-40fa-9969-28049025f921" name="Default Changelist" comment="" />
+      <created>1659692926113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659692926113</updated>
+      <workItem from="1659692927238" duration="17519000" />
+      <workItem from="1659972839346" duration="3600000" />
+      <workItem from="1660057972026" duration="609000" />
+      <workItem from="1661783731245" duration="16469000" />
+      <workItem from="1661860062920" duration="10679000" />
+      <workItem from="1661938398357" duration="85000" />
+      <workItem from="1661942803062" duration="10948000" />
+      <workItem from="1662024794261" duration="787000" />
+      <workItem from="1662039894983" duration="569000" />
+      <workItem from="1662461980571" duration="45000" />
+      <workItem from="1662462027524" duration="40725000" />
+      <workItem from="1662640288779" duration="16427000" />
+      <workItem from="1662717541098" duration="23261000" />
+      <workItem from="1662986856744" duration="17789000" />
+      <workItem from="1663068299707" duration="10611000" />
+      <workItem from="1663159829415" duration="12995000" />
+      <workItem from="1663248554364" duration="13251000" />
+      <workItem from="1663323943038" duration="13514000" />
+      <workItem from="1663535974480" duration="1000" />
+      <workItem from="1663588182585" duration="16034000" />
+      <workItem from="1663678328548" duration="5852000" />
+      <workItem from="1663931468920" duration="12844000" />
+      <workItem from="1664198726069" duration="16897000" />
+      <workItem from="1664268141348" duration="14815000" />
+      <workItem from="1664361549128" duration="6557000" />
+      <workItem from="1664382394338" duration="831000" />
+      <workItem from="1664777894469" duration="59000" />
+      <workItem from="1664777963593" duration="741000" />
+      <workItem from="1664779127724" duration="88000" />
+      <workItem from="1664779226120" duration="368000" />
+      <workItem from="1664789888198" duration="87000" />
+      <workItem from="1664790606827" duration="4570000" />
+      <workItem from="1664807287736" duration="33000" />
+      <workItem from="1664808514216" duration="1296000" />
+      <workItem from="1664871739762" duration="625000" />
+      <workItem from="1664985110718" duration="663000" />
+      <workItem from="1664991052420" duration="117000" />
+      <workItem from="1665038797902" duration="31000" />
+      <workItem from="1665040237783" duration="71000" />
+      <workItem from="1665040743700" duration="503000" />
+      <workItem from="1665041289194" duration="7000" />
+      <workItem from="1665387389730" duration="1793000" />
+    </task>
+    <task id="LOCAL-00001" summary="Finished styling of the app; Now it is possible to show api info to console.log by press Enter or click on search icon">
+      <created>1661808588648</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661808588648</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Finished styling of the app; Now it is possible to show api info to console.log by press Enter or click on search icon">
+      <created>1661808632345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661808632345</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add form tag to App.js; add preventDefault to prevent form`s submit">
+      <created>1661967767971</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661967767971</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed displaing of weather (city name, temperature and icon) at the Main screen">
+      <created>1662567848398</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662567848398</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed displaing of weather (city name, temperature and icon) at the Main screen.">
+      <created>1662668172876</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662668172876</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added addToFavList function to MainScreen component; Added deleteFromFavList to City component; Added getForecast function to City component">
+      <created>1663008008596</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663008008596</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor the main screen when app is loaded in MainScreen and App components">
+      <created>1663071708464</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663071708464</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Part of favorites">
+      <created>1663161076276</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663161076276</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added styles in MainScreen.module.css to scroll favlist">
+      <created>1663263413153</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663263413154</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Deleted mainCity-reducer.js">
+      <created>1663263440258</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663263440258</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added toggle class function to ButtonsList.jsx.">
+      <created>1663278416779</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663278416779</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Small refactor in ButtonList.jsx">
+      <created>1663325196495</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663325196495</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Small refactor in ButtonList.jsx">
+      <created>1663327075437</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663327075437</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Small refactor in ButtonList.jsx">
+      <created>1663327104380</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663327104380</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Reorganized the structure in MainScreen.jsx: added 3 new components: Now.jsx, Details.jsx and Forecast.jsx; Replaced ButtonsList.jsx component">
+      <created>1663354392542</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1663354392542</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Reorganized the structure in MainScreen.jsx: replace buttonsBlock and mainBlock; added 3 new components: Now, Details and Forecast. Each component shows new screen in MainScreen.jsx; Added dt param into api.js">
+      <created>1663621832541</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663621832541</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added new getForecast request to api.js; Rename old request from getForecast to getWeather; Added changes to Forecast component">
+      <created>1663624550783</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663624550783</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added disabled state to Details and Forecast buttons into MainScreen.jsx to prevent click when weather is not exist">
+      <created>1663680301563</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663680301563</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added new component ListItems.jsx and styles into Forecast.module.css;">
+      <created>1664211723558</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1664211723558</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added forecast update when change city in the Forecast.jsx screen">
+      <created>1664283792653</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664283792653</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Code refactoring: replace getMonthName and currentDay functions from Forecast.jsx and Details.jsx to MainScreen.jsx">
+      <created>1664284391201</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1664284391201</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added error message alert, when city doesn't exist">
+      <created>1664284709935</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664284709935</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor the id while adding new city to favList in favorite-reducer.js">
+      <created>1664778042508</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1664778042508</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Refactor buttons style in MainScreen.module.css">
+      <created>1664779170255</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1664779170255</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Created file mainCity-reducer.js with mainCity state; Added new useEffect code to get mainCity from localStorage;">
+      <created>1664791544623</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664791544623</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Small refactoring in App.js Corrected the first useEffect hook">
+      <created>1664985196245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1664985196245</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Updated props in City component; corrected props distruction at MainScreen component in MainScreen.jsx">
+      <created>1664985348690</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1664985348690</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added fetchWeatherData to get weather when clicking at city from favorite list in City.jsx">
+      <created>1664985471695</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1664985471695</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added alert to Now component, when city is already in favorite list in Now.jsx">
+      <created>1665041245277</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1665041245277</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added useState and useEffect hooks with isFav, setIsFav to App.js to control is city in favorite list or not.">
+      <created>1665387882715</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1665387882715</updated>
+    </task>
+    <task id="LOCAL-00031" summary="- Added isFav and setIsFav props to MainScreen component to MainScreen.jsx; &#10;- Replace deleteFromFavList function from MainScreen component to City component; &#10;- Added isFav and setIsFav props to City component; &#10;- Added isFav and setIsFav props to Now component;">
+      <created>1665388232893</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1665388232893</updated>
+    </task>
+    <task id="LOCAL-00032" summary="- Added isFav and setIsFav props to City component in City.jsx;&#10;- Added useEffect hook to control the isFav state and color it;&#10;- Added deleteFromFavList function to delete city from favorite list and control the isFav state;">
+      <created>1665388760500</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1665388760500</updated>
+    </task>
+    <task id="LOCAL-00033" summary="- Deleted id value from initialState.favCities in favorite-reducer.js;&#10;- Refactor favoriteReducer cases;&#10;- Refactor deleteFromFavoriteAC;">
+      <created>1665388965691</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1665388965691</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Part of favorites" />
+    <MESSAGE value="Added styles in MainScreen.module.css to scroll favlist" />
+    <MESSAGE value="Deleted mainCity-reducer.js" />
+    <MESSAGE value="Added toggle class function to ButtonsList.jsx." />
+    <MESSAGE value="Small refactor in ButtonList.jsx" />
+    <MESSAGE value="Reorganized the structure in MainScreen.jsx: added 3 new components: Now.jsx, Details.jsx and Forecast.jsx; Replaced ButtonsList.jsx component" />
+    <MESSAGE value="Reorganized the structure in MainScreen.jsx: replace buttonsBlock and mainBlock; added 3 new components: Now, Details and Forecast. Each component shows new screen in MainScreen.jsx" />
+    <MESSAGE value="Reorganized the structure in MainScreen.jsx: replace buttonsBlock and mainBlock; added 3 new components: Now, Details and Forecast. Each component shows new screen in MainScreen.jsx; Added dt param into api.js" />
+    <MESSAGE value="Added new getForecast request to api.js; Rename old request from getForecast to getWeather; Added changes to Forecast component" />
+    <MESSAGE value="Added disabled state to Details and Forecast buttons into MainScreen.jsx to prevent click when weather is not exist" />
+    <MESSAGE value="Added new component ListItems.jsx and styles into Forecast.module.css;" />
+    <MESSAGE value="Added forecast update when change city in the Forecast.jsx screen" />
+    <MESSAGE value="Code refactoring: replace getMonthName and currentDay functions from Forecast.jsx and Details.jsx to MainScreen.jsx" />
+    <MESSAGE value="Added error message alert, when city doesn't exist" />
+    <MESSAGE value="Refactor the id while adding new city to favList in favorite-reducer.js" />
+    <MESSAGE value="Refactor buttons style in MainScreen.module.css" />
+    <MESSAGE value="Created file mainCity-reducer.js with mainCity state; Added new useEffect code to get mainCity from localStorage;" />
+    <MESSAGE value="Small refactoring in App.js Corrected the first useEffect hook" />
+    <MESSAGE value="Updated props in City component; corrected props distruction at MainScreen component in MainScreen.jsx" />
+    <MESSAGE value="Added fetchWeatherData to get weather when clicking at city from favorite list in City.jsx" />
+    <MESSAGE value="Added alert to Now component, when city is already in favorite list in Now.jsx" />
+    <MESSAGE value="Added useState and useEffect hooks with isFav, setIsFav to App.js to control is city in favorite list or not." />
+    <MESSAGE value="- Added isFav and setIsFav props to MainScreen component to MainScreen.jsx; &#10;- Replace deleteFromFavList function from MainScreen component to City component; &#10;- Added isFav and setIsFav props to City component; &#10;- Added isFav and setIsFav props to Now component;" />
+    <MESSAGE value="- Added isFav and setIsFav props to City component in City.jsx;&#10;- Added useEffect hook to control the isFav state and color it;&#10;- Added deleteFromFavList function to delete city from favorite list and control the isFav state;" />
+    <MESSAGE value="- Deleted id value from initialState.favCities in favorite-reducer.js;&#10;- Refactor favoriteReducer cases;&#10;- Refactor deleteFromFavoriteAC;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Deleted id value from initialState.favCities in favorite-reducer.js;&#10;- Refactor favoriteReducer cases;&#10;- Refactor deleteFromFavoriteAC;" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1103" y="195" key="#Inspections" timestamp="1664309147010">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1103" y="195" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1664309147010" />
+    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1663623425345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1663623425345" />
+    <state x="1198" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1664209065823">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1198" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1664209065823" />
+    <state x="1195" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1662578501748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1195" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1662578501748" />
+    <state x="1254" y="282" key="FileChooserDialogImpl" timestamp="1665038827696">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1254" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1665038827696" />
+    <state x="1195" y="205" key="RollbackChangesDialog" timestamp="1663161768160">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1195" y="205" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1663161768160" />
+    <state x="57" y="206" key="Vcs.Push.Dialog.v2" timestamp="1664779268933">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="57" y="206" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1664779268933" />
+    <state x="1133" y="241" key="run.anything.popup" timestamp="1665388943835">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1133" y="241" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1665388943835" />
+    <state x="1128" y="232" width="672" height="678" key="search.everywhere.popup" timestamp="1663336358067">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1128" y="232" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1663336358067" />
+  </component>
+</project>

@@ -1,16 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from '../MainScreen/MainScreen.module.css';
 import {AiOutlineHeart} from 'react-icons/ai';
 
-const Now = ({weather, addToFavList, favCities}) => {
+const Now = ({weather, addToFavList, favCities, isFav, setIsFav}) => {
+
+    useEffect(() => {
+        if (isFav === true) {
+            document.querySelector('#likeIcon').style.color = 'red';
+        }
+    }, [isFav]);
 
     const handleClick = () => {
+        setIsFav(true);
         if (favCities.find(el => el.name === weather.name)) {
-            localStorage.setItem('favCity', weather.name);
             alert(`${weather.name} is already in favorite list!`);
         }
         addToFavList(weather.name, favCities);
-
     }
 
     return (
@@ -23,7 +28,7 @@ const Now = ({weather, addToFavList, favCities}) => {
                 <div className={s.add_favorite}>
                     <h3 id={'city'}>{weather ? `${weather.name}` : 'City'}</h3>
                     <button id={'likeBtn'} onClick={handleClick}>
-                        <AiOutlineHeart className={s.add_favorite_icon} />
+                        <AiOutlineHeart id={'likeIcon'} className={s.add_favorite_icon} />
                     </button>
                 </div>
             </div>
