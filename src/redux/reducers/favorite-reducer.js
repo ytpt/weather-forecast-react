@@ -1,13 +1,13 @@
 const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 const DELETE_FROM_FAVORITE = 'DELETE_FROM_FAVORITE';
 
-export const initialState = {
+const initialState = {
     favCities: [
-        {id: 1, name: 'Bali'},
-        {id: 2, name: 'Dubrovnik'},
-        {id: 3, name: 'Budva'},
-        {id: 4, name: 'Tomsk Oblast'},
-        {id: 5, name: 'Dubai'}
+        {name: 'Bali'},
+        {name: 'Dubrovnik'},
+        {name: 'Budva'},
+        {name: 'Tomsk Oblast'},
+        {name: 'Dubai'}
     ]
 }
 
@@ -17,7 +17,6 @@ const favoriteReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favCities: [...state.favCities, {
-                    id: state.favCities.length + 1,
                     name: action.cityName
                 }]
             }
@@ -26,7 +25,7 @@ const favoriteReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favCities: state.favCities.filter((city) =>
-                    city.id !== action.cityId)
+                    city.name !== action.cityName)
             }
         }
         default: return state;
@@ -34,6 +33,6 @@ const favoriteReducer = (state = initialState, action) => {
 }
 
 export const addToFavoriteAC = (cityName) => ({type: ADD_TO_FAVORITE, cityName});
-export const deleteFromFavoriteAC = (cityId) => ({type: DELETE_FROM_FAVORITE, cityId});
+export const deleteFromFavoriteAC = (cityName) => ({type: DELETE_FROM_FAVORITE, cityName});
 
 export default favoriteReducer;
