@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from "react";
 import City from "./FavoriteList/City";
-import {addToFavoriteAC, deleteFromFavoriteAC} from "../../redux/reducers/favorite-reducer";
-import {useSelector} from "react-redux";
+import {addToFavoriteAC} from "../../redux/reducers/favorite-reducer";
 import s from "./MainScreen.module.css";
 import classNames from "classnames";
 import Now from "../NowScreen/Now";
 import Forecast from "../ForecastScreen/Forecast";
 import Details from "../DetailsScreen/Details";
 
-const MainScreen = ({weather, setWeather, dispatch}) => {
-
-    let favCities = useSelector((store) => store.favCities.favCities);
+const MainScreen = ({weather, setWeather, dispatch, favCities, isFav, setIsFav}) => {
 
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favCities));
@@ -23,19 +20,16 @@ const MainScreen = ({weather, setWeather, dispatch}) => {
         }
     }
 
-    const deleteFromFavList = (cityId) => {
-        dispatch(deleteFromFavoriteAC(cityId));
-    }
-
     //Проблема !ТУТ! список город строится на основе старого favCities
     const favList = favCities.map(city => {
         return (
             <City
-                key={city.id}
+                key={city.name}
                 city={city}
-                deleteFromFavList={deleteFromFavList}
                 setWeather={setWeather}
                 dispatch={dispatch}
+                isFav={isFav}
+                setIsFav={setIsFav}
             />
         )
     })
@@ -90,7 +84,8 @@ const MainScreen = ({weather, setWeather, dispatch}) => {
                 </div>
                 <div className={s.mainBlock}>
                     {childData === 'now'
-                    && <Now weather={weather} addToFavList={addToFavList} favCities={favCities} />
+                    && <Now weather={weather} addToFavList={addToFavList} favCities={favCities}
+                            isFav={isFav} setIsFav={setIsFav}/>
                     }
                     {childData === 'details' && <Details weather={weather} currentDay={currentDay} />}
                     {childData === 'forecast' && <Forecast weather={weather} currentDay={currentDay} />}
